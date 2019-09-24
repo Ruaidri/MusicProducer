@@ -1,0 +1,751 @@
+@font-face {
+  font-family: PopLight;
+  src:url("../fonts/Poppins-Light.ttf");
+}
+@font-face {
+  font-family: PopRegular;
+  src:url("../fonts/Poppins-Regular.ttf");
+}
+body{
+  font-family: PopLight;
+  margin: 0;
+  padding: 0;
+  background: #000;
+  height: 100%;
+}
+.jumbo{
+  height: 90vh;
+}
+.jumbo h1{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+  color: #ddd;
+  font-size: 4.6vw;
+  font-family: sans-serif;
+  letter-spacing: 0.2em;
+}
+h1 span{
+  opacity: 0;
+  display: inline-block;
+  animation: animate 1s linear forwards;
+}
+@keyframes animate {
+  0%{
+    opacity: 0;
+    transform: rotateY(90deg);
+    filter: blur(10px);
+  }
+  100%{
+    opacity: 1;
+    transform: rotateY(0deg);
+    filter: blur(0);
+  }
+}
+video{
+  object-fit: cover;
+  -webkit-transform: scaleX(1.5);
+  -moz-transform: scaleX(1.5);
+}
+h1 span:nth-child(1){
+  animation-delay: 1s
+}
+h1 span:nth-child(2){
+  animation-delay: 1.5s
+}
+h1 span:nth-child(3){
+  animation-delay: 2s
+}
+h1 span:nth-child(4){
+  animation-delay: 2.5s
+}
+h1 span:nth-child(5){
+  animation-delay: 3s
+}
+h1 span:nth-child(6){
+  animation-delay: 3.5s
+}
+h1 span:nth-child(8){
+  animation-delay: 4s
+}
+h1 span:nth-child(9){
+  animation-delay: 4.4s
+}
+h1 span:nth-child(10){
+  animation-delay: 4.9s
+}
+h1 span:nth-child(11){
+  animation-delay: 5.2s
+}
+h1 span:nth-child(12){
+  animation-delay: 5.5s
+}
+h1 span:nth-child(13){
+  animation-delay: 5.9s
+}
+h1 span:nth-child(14){
+  animation-delay: 6.2s
+}
+.details{
+  color: #ddd;
+  padding: 0 0 0 15px;
+  letter-spacing: 5px;
+  width: 39.5vw;
+  display: inline-grid;
+}
+.dtwo{
+  text-align: -webkit-right;
+}
+.details h1{
+  font-size: 6vw;
+  font-weight: bold;
+  margin-bottom: 0px;
+  margin-top: 58px;
+}
+.details h2{
+  font-size: 3vw;
+  font-weight: 700;
+  margin-top: 0px;
+}
+/* Allows the details to be off center without having the h4 being too wide */
+.details h4 {
+  font-size: 1vw;
+  width: 85%;
+}
+.divide h1{
+  text-align: center;
+  color: #aaa;
+  font-size: 6vw;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+@media (min-width: 1199px){
+  .details {
+    margin: 80px;
+}
+}
+.left-h4{
+  text-align: right;
+}
+/* AUDIO PLAYER Centering */
+#container, #progress, #player, .cover, .playlist {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+#container {
+    margin-top: 65vh;
+}
+#player {
+  width: 300px;
+  height: 300px;
+  background: #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 2px 2px 20px 0 rgba(0,0,0,.3);
+}
+/* Album Cover */
+img {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: .75;
+  -webkit-transition: .3s all ease-in-out;
+}
+/* Fade */
+#container:hover .cover,
+#container:hover .to-lyrics-label,
+#container:hover .to-back-label {
+  opacity: .9;
+}
+.cover,
+.to-lyrics-label,
+.to-back-label {
+  opacity: .3;
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+}
+/* Player Buttons */
+.controls {
+  position: relative;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+}
+button {
+  margin: 10px;
+  color: #fff;
+  background: transparent;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  text-align: center;
+  text-shadow: 1px 1px 3px #000;
+  transition: all .3s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+}
+button:hover {
+  color: #26C5CB;
+}
+#play-pause {
+  width: 46px;
+  height: 46px;
+  transition: all .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+}
+/* Song Info */
+.info {
+  position: relative;
+  margin-top: 28px;
+  bottom: 10px;
+  color: #fff;
+  text-align: center;
+  text-shadow: 1px 1px 3px #000;
+}
+.song {
+  font-size: 18px;
+}
+.author {
+  font-size: 14px;
+  margin-bottom: -8px;
+}
+/* ... */
+.song,
+.author,
+.playlist a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+/* Volume */
+input[type='range'] {
+  display: block;
+  margin: 14px auto;
+  width: 80px;
+  height: 2px;
+  outline: 0;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px 0 #000;
+  -webkit-appearance: none !important;
+}
+input[type='range']::-webkit-slider-thumb {
+  background: #AEAEAE;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  transition: .1s all linear;
+  -webkit-transition: .1s all linear;
+  -webkit-appearance: none !important;
+}
+input[type='range']:hover::-webkit-slider-thumb {
+  background: #26C5CB;
+  -webkit-transform:scale(2);
+}
+.cover {
+  padding-top: 100px;
+  transition: all .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+}
+.instructions {
+  text-align:center;
+  font-size:20px;
+  margin: 15vh;
+}
+/* //////////////////////////////////////////////////////////////////////////////////////////////
+//   Default Modal Styles   //
+////////////////////////////////////////////////////////////////////////////////////////////// */
+/*   This is the background overlay   */
+.backgroundOverlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #000000;
+  opacity: .85;
+  filter: alpha(opacity=85);
+  -moz-opacity: .85;
+  z-index: 101;
+  display: none;
+}
+/*   This is the Popup Window   */
+.delayedPopupWindow {
+  display: none;
+  position: fixed;
+  top: 15%;
+  left: 35%;
+  background-color: #efefef;
+  border: 2px solid #333;
+  z-index: 102;
+  padding: 10px 20px;
+}
+@media (max-width: 1199px){
+  .delayedPopupWindow {
+      display: none;
+      position: fixed;
+      top: 15%;
+      left: 15%;
+      background-color: #efefef;
+      border: 2px solid #333;
+      z-index: 102;
+      padding: 10px 20px;
+  }
+}
+/*   This is the closing button  */
+#btnClose {
+  width:100%;
+  display: block;
+  text-align: right;
+  text-decoration: none;
+  color: #BCBCBC;
+}
+/*   This is the closing button hover state  */
+#btnClose:hover {
+  color: #c90c12;
+}
+/*   This is the description headline and paragraph for the form   */
+#delayedPopup > div.formDescription {
+  width: 100%;
+  padding: 1% 3%;
+  font-size: 18px;
+  color: #fff;
+  clear: left;
+  text-align: center;
+  margin-top: 3em;
+}
+/*   This is the styling for the form's headline   */
+#delayedPopup > div.formDescription h2 {
+  color: #ffffff;
+  font-size: 36px;
+  line-height: 40px;
+  margin-bottom: 0;
+}
+#delayedPopup > div.formDescription p {
+  margin: 0;
+  color: white;
+  text-shadow:
+  -1px -1px 0 #000,
+  1px -1px 0 #000,
+  -1px 1px 0 #000,
+  1px 1px 0 #000;
+}
+/*
+////////// MailChimp Signup Form //////////////////////////////
+*/
+
+/*   This is the signup form body  */
+#delayedPopup #mc_embed_signup {
+  float: left;
+  width: 47%;
+  padding: 1%;
+  display: block;
+  font-size: 16px;
+  color: #fdfdfd;
+  margin-left: 25%;
+  margin-top: 6em;
+}
+/*   This is the styling for the signup form inputs  */
+#delayedPopup #mc-embedded-subscribe-form input {
+  width: 95%;
+  height: 30px;
+  font-size: 18px;
+  padding: 3px;
+  margin-bottom: 5px;
+}
+/*   This is the styling for the signup form inputs when they are being hovered with the mouse  */
+#delayedPopup #mc-embedded-subscribe-form input:hover {
+  border:solid 2px #40c348;
+  box-shadow: 0 1px 3px #AAAAAA;
+}
+/*   This is the styling for the signup form inputs when they are focused  */
+#delayedPopup #mc-embedded-subscribe-form input:focus {
+  border:solid 2px #40c348;
+  box-shadow: none;
+}
+/*   This is the styling for the signup form submit button  */
+#delayedPopup #mc-embedded-subscribe {
+  width: 100%!important;
+  height: 40px!important;
+  margin: 10px auto 0 auto;
+  background: #121312;
+  border: none;
+  color: #fff;
+}
+/*   This is the styling for the signup form submit button hover state  */
+#delayedPopup #mc-embedded-subscribe:hover {
+  background: #40c348;
+  color: #fff;
+  box-shadow:none!important;
+  cursor: pointer;
+}
+/* RECORD POPUP */
+.record-container {
+  width: 400px; height: 300px;
+  border-radius: 10px;
+}
+.record {
+  margin: 19px auto;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background:
+  linear-gradient(30deg, transparent 40%, rgba(42, 41, 40, .85) 40%) no-repeat 100% 0,
+  linear-gradient(60deg, rgba(42, 41, 40, .85) 60%, transparent 60%) no-repeat 0 100%,
+  repeating-radial-gradient(#2a2928, #2a2928 4px, #ada9a0 5px, #2a2928 6px);
+  background-size: 50% 100%, 100% 50%, 100% 100%;
+}
+.record:after {
+  position: absolute;
+  top: 50%; left: 50%;
+  margin: -35px;
+  border: solid 1px #d9a388;
+  width: 68px; height: 68px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px #da5b33,
+  inset 0 0 0 27px #da5b33;
+  background: #b5ac9a;
+  content: '';
+}
+.popup {
+    width: 380px;
+    height: 180px;
+    background: var(--clr4);
+    bottom: 20px;
+    left: -380px;
+    position: fixed;
+    border-radius: 5px;
+    box-shadow: 0px 25px 10px -15px rgba(0, 0, 0, 0.05);
+    transition: 0.5s;
+    z-index: 999;
+}
+:root {
+    --clr1: #4e4e4e;
+    --clr2: #333;
+    --clr3: #efefef;
+    --clr4: tomato;
+    --border-radius: 7px;
+    --text-radius: 50em;
+}
+.ns-close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    overflow: hidden;
+    text-indent: 100%;
+    cursor: pointer;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.ns-close::after {
+    -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+.ns-close::before {
+    -webkit-transform: translate(-50%, -50%) rotate(45deg);
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.ns-close::before, .ns-close::after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 60%;
+    top: 50%;
+    left: 50%;
+    background: var(--clr2);
+}
+/* CONTACT FORM STYLE */
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #aca49c;
+  font-size: 0.875em;
+}
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
+  color: #bbb5af;
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #aca49c;
+  font-size: 0.875em;
+}
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
+  color: #bbb5af;
+}
+input::placeholder, textarea::placeholder {
+  color: #aca49c;
+  font-size: 0.875em;
+}
+input:focus::placeholder, textarea::focus:placeholder {
+  color: #bbb5af;
+}
+input::-ms-placeholder, textarea::-ms-placeholder {
+  color: #aca49c;
+  font-size: 0.875em;
+}
+input:focus::-ms-placeholder, textarea:focus::-ms-placeholder {
+  color: #bbb5af;
+}
+/* on hover placeholder */
+input:hover::-webkit-input-placeholder, textarea:hover::-webkit-input-placeholder {
+  color: #e2dedb;
+  font-size: 0.875em;
+}
+input:hover:focus::-webkit-input-placeholder, textarea:hover:focus::-webkit-input-placeholder {
+  color: #cbc6c1;
+}
+input:hover::-moz-placeholder, textarea:hover::-moz-placeholder {
+  color: #e2dedb;
+  font-size: 0.875em;
+}
+input:hover:focus::-moz-placeholder, textarea:hover:focus::-moz-placeholder {
+  color: #cbc6c1;
+}
+input:hover::placeholder, textarea:hover::placeholder {
+  color: #e2dedb;
+  font-size: 0.875em;
+}
+input:hover:focus::placeholder, textarea:hover:focus::placeholder {
+  color: #cbc6c1;
+}
+input:hover::placeholder, textarea:hover::placeholder {
+  color: #e2dedb;
+  font-size: 0.875em;
+}
+input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
+  color: #cbc6c1;
+}
+header {
+  position: relative;
+  margin: 100px 0 25px 0;
+  font-size: 2.3em;
+  text-align: center;
+  letter-spacing: 7px;
+  color: #aaa;
+  background: #0a0a0a
+}
+#form {
+  position: relative;
+  width: 500px;
+  margin: 50px auto 100px auto;
+}
+input {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.875em;
+  width: 470px;
+  height: 50px;
+  padding: 0px 15px 0px 15px;
+  background: transparent;
+  outline: none;
+  color: #726659;
+  border: solid 1px #b3aca7;
+  border-bottom: none;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+}
+input:hover {
+  background: #b3aca7;
+  color: #e2dedb;
+}
+textarea {
+  width: 470px;
+  max-width: 470px;
+  height: 110px;
+  max-height: 110px;
+  padding: 15px;
+  background: transparent;
+  outline: none;
+  color: #726659;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.875em;
+  border: solid 1px #b3aca7;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+}
+textarea:hover {
+  background: #b3aca7;
+  color: #e2dedb;
+}
+#submit {
+  width: 502px;
+  padding: 0;
+  margin: -5px 0px 0px 0px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.875em;
+  color: #b3aca7;
+  outline:none;
+  cursor: pointer;
+  border: solid 1px #b3aca7;
+  border-top: none;
+}
+#submit:hover {
+  color: #e2dedb;
+}
+/* FOOTER STYLE */
+#myFooter{
+  margin-top:100px;
+}
+#myFooter .container{
+  text-align: center;
+}
+#myFooter .footer-copyright{
+  margin-top: 35px;
+  margin-bottom: 0px;
+  text-align: center;
+  color: #777;
+}
+#myFooter ul{
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 18px;
+}
+#myFooter a{
+  color: #282b2d;
+  font-size: 18px;
+}
+#myFooter li{
+  display: inline-block;
+  margin: 0px 15px;
+  line-height: 2;
+}
+#myFooter .footer-social{
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background-color: #eee;
+}
+#myFooter .fa{
+  font-size: 36px;
+  margin-right: 15px;
+  margin-left: 20px;
+  background-color: white;
+  color: #d0d0d0;
+  border-radius: 51%;
+  padding: 10px;
+  height: 42px;
+  width: 51px;
+  text-align: center;
+  line-height: 43px;
+  text-decoration: none;
+  transition:color 0.2s;
+}
+#myFooter .fa-facebook:hover{
+  color: #2b55ff;
+}
+#myFooter .fa-facebook:focus{
+  color: #2b55ff;
+}
+#myFooter .fa-google-plus:hover{
+  color:red;
+}
+#myFooter .fa-google-plus:focus{
+  color:red;
+}
+#myFooter .fa-twitter:hover{
+  color: #00aced;
+}
+#myFooter .fa-twitter:focus{
+  color:#00aced;
+}
+/* CSS used for positioning the footers at the bottom of the page. */
+/* You can remove this. */
+.content{
+  flex: 1 0 auto;
+  -webkit-flex: 1 0 auto;
+  min-height: 200px;
+}
+#myFooter{
+  background: #d0d0d0;
+  flex: 0 0 auto;
+  -webkit-flex: 0 0 auto;
+}
+@media (max-width: 1199px){
+  video{
+    display: none;
+  }
+  .backgroundOverlay {
+    display: none;
+  }
+  #form {
+    width: -webkit-fill-available;
+  }
+  .Cname{
+    width: -webkit-fill-available;
+  }
+  .Cemail{
+    width: -webkit-fill-available;
+  }
+  .Cmess{
+    width: -webkit-fill-available;
+  }
+  .Csub{
+    width: -webkit-fill-available;
+  }
+  #submit {
+    width: -webkit-fill-available;
+  }
+  .cover{
+    padding-top: 10px;
+  }
+  #player{
+    width: 200px;
+    height: 200px;
+  }
+  #container {
+    margin-top: 50vh;
+  }
+  .info{
+    margin-top: 0;
+  }
+  #progress{
+    width: 200px;
+    height: 200px;
+  }
+  .divide{
+    margin-top: 70px;
+  }
+  .details h4 {
+    font-size: 2vw;
+  }
+  .dtwo{
+    float: right;
+    margin-right: 20px;
+  }
+  .record{
+    margin: 0;
+    width: 300px;
+    height: 300px;
+  }
+  .delayedPopupWindow{
+    left: 4%;
+  }
+  #delayedPopup > div.formDescription {
+    margin: 0;
+  }
+  #delayedPopup #mc_embed_signup {
+    margin-top: 0;
+  }
+  #delayedPopup > div.formDescription h2 {
+    margin-top: 0;
+    font-size: 34px;
+  }
+  #delayedPopup #mc-embedded-subscribe-form input {
+    margin: 0;
+  }
+  .record:after{
+    z-index: -1;
+  }
+}
