@@ -38,13 +38,13 @@ error_reporting(E_ALL);
   //Server settings
   // $mail->SMTPDebug = 2;
   $mail->IsSMTP();                                      // Set mailer to use SMTP
-  $mail->Host = 'mail.johnnywelfarebeats.com';                 // Specify main and backup server
+  $mail->Host = 'mail.sample.com';                 // Specify main and backup server
   $mail->Port = 26;                                    // Set the SMTP port
   $mail->SMTPAuth = true;                               // Enable SMTP authentication
-  $mail->Username = 'newsletter@johnnywelfarebeats.com';                // SMTP username
-  $mail->Password = 'redking3';                  // SMTP password
+  $mail->Username = 'sample@johnnywelfarebeats.com';                // SMTP username
+  $mail->Password = 'sample';                  // SMTP password
   // $mail->SMTPSecure = 'ssl';                            // Enable encryption, 'ssl' also accepted
-  $mail->From = 'newsletter@johnnywelfarebeats.com';
+  $mail->From = 'sample@johnnywelfarebeats.com';
   $mail->FromName = ("JohnnyWelfare");
   $mail->AddAddress($email);  // Add a recipient
   $mail->IsHTML(true);                                  // Set email format to HTML
